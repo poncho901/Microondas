@@ -91,7 +91,7 @@ class Microwave(FrameComponent):
 
 
 class Timer(FrameComponent):
-
+    """"""
     def __init__(self, master):
         self.total = "0000"
         FrameComponent.__init__(self, master)
@@ -164,10 +164,10 @@ class Controls(FrameComponent):
 
     def create(self):
         start = Button(
-            self, text="Start", command=self.start_oven, **BUTTON_STYLE)
+            self, text="Iniciar", command=self.start_oven, **BUTTON_STYLE)
         start.pack(side=LEFT)
         stop = Button(
-            self, text="Stop / Clear", command=self.stop_oven, **BUTTON_STYLE)
+            self, text="Detener / Limpiar", command=self.stop_oven, **BUTTON_STYLE)
         stop.pack(side=LEFT)
 
     def start_oven(self):
@@ -178,7 +178,7 @@ class Controls(FrameComponent):
 
 
 class Door(Canvas):
-
+    """Diseño de puerta del microondas"""
     def __init__(self, master):
         Canvas.__init__(self, master, height=222, width=400, bg="black")
         self.create()
