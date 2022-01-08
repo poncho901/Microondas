@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """Proyecto Final Emulador de un microondas 
 Equipo 01: 
 Sandra Elizabeth Rodríguez Carmona
