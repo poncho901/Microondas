@@ -51,7 +51,7 @@ class CookingState(State):
 
     def stop(self):
         self.microwave.set_state(StoppedState)
-        print ("Stopped")
+        print ("Detenido")
         self.microwave.door.itemconfig(self.microwave.door.window, fill="grey")
 
 
@@ -191,7 +191,7 @@ class Door(Canvas):
 
 if __name__ == "__main__":
     top = Tk()
-    top.title('Microwave')
+    top.title('Microondas ')
     top.resizable(width=FALSE, height=FALSE)
     microwave = None
 
