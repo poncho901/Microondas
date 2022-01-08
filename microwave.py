@@ -8,7 +8,7 @@ import sys
 import time
 import threading
 import traceback
-from Tkinter import Tk, Frame, Button, Label, LEFT, Canvas, FALSE
+from tkinter import Tk, Frame, Button, Label, LEFT, Canvas, FALSE
 
 BUTTON_STYLE = {"borderwidth": 2, "font": ('Helvetica', 10, 'bold'),
                 "fg": "white", "bg": "black", "activebackground": "green"}
