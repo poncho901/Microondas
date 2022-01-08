@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Proyecto Final Emulador de un microondas"""
+"""Proyecto Final Emulador de un microondas 
+Equipo 01: 
+Sandra Elizabeth Rodríguez Carmona
+Brian Alfonso Espinosa Vejar
+"""
 import sys
 import time
 import threading
