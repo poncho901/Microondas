@@ -35,14 +35,14 @@ class StoppedState(State):
             self.microwave.door.itemconfig(
                 self.microwave.door.window, fill="yellow")
             self.microwave.set_state(CookingState)
-            # No Lock required as 'timer.total' changes happen asynchronously
+            # No se requiere bloqueo ya que los cambios de 'timer.total' ocurren de forma asincrónica
             self.microwave.timer_thread = threading.Thread(
                 target=self.microwave.timer.countdown)
             self.microwave.timer_thread.start()
 
 
     def stop(self):
-        """Clear timer if stopped and stop is pressed."""
+        """Borre el temporizador si se detiene y se presiona detener."""
         self.microwave.timer.total = "0000"
         self.microwave.timer.refresh()
 
@@ -83,7 +83,7 @@ class Microwave(FrameComponent):
         self.state = state_class(self)
 
     def shutdown(self):
-        """Stop microwave, and wait for last active thread to terminate"""
+        """Detenga el microondas y espere a que termine el último hilo activo"""
         self.controls.stop_oven()
         if self.timer_thread and self.timer_thread.is_alive():
             self.timer_thread.join()
@@ -124,7 +124,7 @@ class Timer(FrameComponent):
         self.master.controls.stop_oven()
 
     def validate_timer(self):
-        """Correct a max value of '99:99' to '99:59'"""
+        """Corrija un valor máximo de '99:99' a '99:59'"""
         if int(self.total) > 9959:
             self.total = "9959"
 
@@ -137,7 +137,7 @@ class NumberPad(FrameComponent):
             for column in range(3):
                 num += 1
                 if num in (10, 12):
-                    continue  # numberpad doesnt have 10 / 12
+                    continue  # el teclado numérico no tiene 10 / 12
                 elif num == 11:
                     text = "0"
                 else:
@@ -185,7 +185,7 @@ class Door(Canvas):
         self.pack(side=LEFT)
 
     def create(self):
-        # (x0, y0), (x1, y1) => top left & top right coords (returns shape id)
+        # (x0, y0), (x1, y1) => coordenadas superior izquierda y superior derecha (devuelve de forma id)
         self.window = self.create_rectangle((50, 50), (350, 175), fill="grey")
 
 
