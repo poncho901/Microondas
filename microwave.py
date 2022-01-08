@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-"""Proyecto Final 
-"""
+"""Proyecto Final Emulador de un microondas """
 import sys
 import time
 import threading
