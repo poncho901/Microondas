@@ -1,8 +1,5 @@
 #!/usr/bin/env python
-"""Microwave oven example.
-
-Implemented using pythons Tkinter library for the GUI and the State design
-pattern.
+"""Proyecto Final 
 """
 import sys
 import time
